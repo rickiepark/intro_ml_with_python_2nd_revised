@@ -12,11 +12,11 @@ def plot_learning_curve(est, X, y):
         est, X, y, train_sizes=np.linspace(.1, 1, 20), cv=KFold(20, shuffle=True, random_state=1))
     estimator_name = est.__class__.__name__
     line = plt.plot(training_set_size, train_scores.mean(axis=1), '--',
-                    label=estimator_name + " 훈련")
+                    label="training " + estimator_name)
     plt.plot(training_set_size, test_scores.mean(axis=1), '-',
-             label=estimator_name + " 테스트", c=line[0].get_color())
-    plt.xlabel('훈련 세트 크기')
-    plt.ylabel('점수 (R^2)')
+             label="test " + estimator_name, c=line[0].get_color())
+    plt.xlabel('training set size')
+    plt.ylabel('score (R^2)')
     plt.ylim(0, 1.1)
 
 

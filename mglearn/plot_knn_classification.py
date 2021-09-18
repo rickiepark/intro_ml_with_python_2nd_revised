@@ -23,5 +23,5 @@ def plot_knn_classification(n_neighbors=1):
     clf = KNeighborsClassifier(n_neighbors=n_neighbors).fit(X, y)
     test_points = discrete_scatter(X_test[:, 0], X_test[:, 1], clf.predict(X_test), markers="*")
     training_points = discrete_scatter(X[:, 0], X[:, 1], y)
-    plt.legend(training_points + test_points, ["훈련 클래스 0", "훈련 클래스 1",
-                                               "테스트 예측 0", "테스트 예측 1"])
+    plt.legend(training_points + test_points, ["train class 0", "train class 1",
+                                               "test prediction 0", "test prediction 1"])
