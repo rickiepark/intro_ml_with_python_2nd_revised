@@ -27,6 +27,6 @@ def plot_linear_regression_wave():
     ax.set_ylim(-3, 3)
     #ax.set_xlabel("Feature")
     #ax.set_ylabel("Target")
-    ax.legend(["model", "training data"], loc="best")
+    ax.legend(["모델", "훈련 데이터"], loc="best")
     ax.grid(True)
     ax.set_aspect('equal')
