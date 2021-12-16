@@ -54,7 +54,7 @@ def plot_tree_progressive():
         axes.append(ax)
     axes = np.array(axes)
 
-    for i, max_depth in enumerate([1, 2, 9]):
+    for i, max_depth in enumerate([1, 2, 7]):
         tree = plot_tree(X, y, max_depth=max_depth, ax=axes[i, 0])
         axes[i, 1].imshow(tree_image(tree))
         axes[i, 1].set_axis_off()
