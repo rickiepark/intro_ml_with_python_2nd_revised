@@ -125,7 +125,7 @@ def plot_pca_faces(X_train, X_test, image_shape):
         ax[0].imshow(X_test[i].reshape(image_shape))
         # plot the four back-transformed images
         for a, X_test_back in zip(ax[1:], reduced_images):
-            a.imshow(X_test_back[i].reshape(image_shape), vmin=0, vmax=1)
+            a.imshow(X_test_back[i].reshape(image_shape))
 
     # label the top row
     axes[0, 0].set_title("원본 이미지")
