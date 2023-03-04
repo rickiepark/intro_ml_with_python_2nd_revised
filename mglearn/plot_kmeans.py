@@ -109,10 +109,10 @@ def plot_kmeans_faces(km, pca, X_pca, X_people, y_people, target_names):
         inds = np.argsort(dists)[:5]
         dists[~mask] = -np.inf
         inds = np.r_[inds, np.argsort(dists)[-5:]]
-        axes[cluster, 0].imshow(pca.inverse_transform(center).reshape(image_shape), vmin=0, vmax=1)
+        axes[cluster, 0].imshow(pca.inverse_transform(center).reshape(image_shape))
         for image, label, asdf, ax in zip(X_people[inds], y_people[inds],
                                           km.labels_[inds], axes[cluster, 1:]):
-            ax.imshow(image.reshape(image_shape), vmin=0, vmax=1)
+            ax.imshow(image.reshape(image_shape))
             ax.set_title("%s" % (target_names[label].split()[-1]), fontdict={'fontsize': 9})
 
     # add some boxes to illustrate which are similar and which dissimilar
