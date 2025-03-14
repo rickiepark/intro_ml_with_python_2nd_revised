@@ -71,7 +71,7 @@ def heatmap(values, xlabel, ylabel, xticklabels, yticklabels, cmap=None,
     ax.set_aspect(1)
 
     for p, color, value in zip(img.get_paths(), img.get_facecolors(),
-                               img.get_array()):
+                               img.get_array().ravel()):
         x, y = p.vertices[:-2, :].mean(0)
         if np.mean(color[:3]) > 0.5:
             c = 'k'
